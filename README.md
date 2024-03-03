@@ -12,8 +12,7 @@ The application intentionally uses the vulnerable Log4j 2.14.1 release to demons
 
 Run the following commands:
 ```
-https://repo.huaweicloud.com/java/jdk/8u181-b13/jdk-8u181-linux-x64.tar.gz
-
+wget https://repo.huaweicloud.com/java/jdk/8u181-b13/jdk-8u181-linux-x64.tar.gz
 sudo mkdir /opt/jdk
 sudo tar -zxf jdk-8u181-linux-x64.tar.gz -C /opt/jdk
 sudo update-alternatives --install /usr/bin/java java /opt/jdk/jdk1.8.0_181/bin/java 100
