@@ -31,6 +31,7 @@ export PATH
 
 Now you can check if it has installed properly:
 ```
+source ~/.profile
 java -version
 ```
 
@@ -38,8 +39,7 @@ java -version
 Run the following commands:
 ```
 wget https://mirrors.estointernet.in/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
-tar -xvf apache-maven-3.6.3-bin.tar.gz
-mv apache-maven-3.6.3 /opt/
+sudo tar -xvf apache-maven-3.6.3-bin.tar.gz -C /opt
 ```
 
 Now edit the file `~/.profile` and add the lines:
@@ -49,10 +49,16 @@ PATH="$M2_HOME/bin:$PATH"
 export PATH
 ```
 
+Now you can check if it has installed properly:
+```
+source ~/.profile
+mvn -version
+```
+
 ## Building
 To compile the application run the following command:
 `mvn clean compile assembly:single`
 This will build the jar file (with the libraries included)
 
 To run this jar file run the following command:
-`mvn clean compile assembly:single`
+`java -jar target/vulnerable_app-1.0-SNAPSHOT-jar-with-dependencies.jar`
